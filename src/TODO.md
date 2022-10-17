@@ -1,0 +1,2 @@
+- build a heart animation on the card (img) when a task is done
+- name : just10 (cause you can just do 10 things per day )

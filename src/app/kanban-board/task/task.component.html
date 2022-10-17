@@ -1,0 +1,57 @@
+<mat-card cdkDrag>
+  <mat-card-header>
+    <mat-card-title>Walk the dog</mat-card-title>
+    <mat-card-subtitle>just a subtitle test</mat-card-subtitle>
+    <select matNativeControl [class]="" data-select>
+      <option>TODO</option>
+      <option>IN PROGRESS</option>
+      <option>DONE</option>
+    </select>
+    <mat-icon
+      fontIcon="control_camera"
+      aria-hidden="false"
+      style="color: white"
+      cdkDragHandle
+    ></mat-icon>
+  </mat-card-header>
+  <img
+    mat-card-image
+    src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+  />
+  <!-- TODO get the image dynamicly via searchengine -->
+  <mat-card-content>
+    <!-- TODO get the *ngfor to run  -->
+    <ng-template ngIf="taskExample">
+      <div class="listed-tasks" *ngFor="let task of taskExample">
+        <div>{{ task }}</div>
+      </div>
+    </ng-template>
+    <mat-card-actions>
+      <select matNativeControl>
+        <option>Important</option>
+        <option>Very important</option>
+        <option>Not important</option>
+      </select>
+      <input
+        matInput
+        placeholder="Task Name"
+        [(ngModel)]="taskName"
+        data-input
+      />
+      <p></p>
+      <button
+        mat-raised-button
+        (click)="onReset()"
+        [disabled]="taskName === ''"
+      >
+        RESET
+      </button>
+      <button
+        mat-raised-button
+        (click)="onClear()"
+        [disabled]="taskExample.length === 0"
+      >CLEAR LIST</button>
+      <button mat-raised-button (click)="onCreate()">ADD TASK</button>      
+    </mat-card-actions>
+  </mat-card-content>
+</mat-card>

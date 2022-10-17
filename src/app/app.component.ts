@@ -6,5 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'todolist';
+  title = '10 things i have to offer today';
+  taskName = 'dummy task'
+  taskCreated = false;
+  taskTitle = '';
+
+
+  tasks = [''];
+
+  onAddTask() {
+    this.taskCreated = true;
+    console.log('add task fucker')
+    this.tasks.push(this.taskName);
+  }
+  
 }
